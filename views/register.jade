@@ -1,0 +1,23 @@
+doctype
+html(lang = 'en')
+	head
+		title Register
+
+	body
+		.container-register
+			.row
+				.col-md-4(style = 'text-align : center; margin-top : 300px')
+					form(action = '/login' method = 'post')
+						label(style = 'display : block; margin-right : 90px') Full Name
+						input(type = 'text' name = 'username')
+						label(style = 'display : block; margin-right : 65px') Email Address
+						input(type = 'text' name = 'username')
+						label(style = 'display : block; margin-right : 98px') Password
+						input(type = 'password' name = 'password')
+						label(style = 'display : block; margin-right : 41px') Confirm Password
+						input(type = 'password' name = 'password')
+		
+				.col-md-4(style = 'text-align : center; margin-top : 5px')
+						button.btn(style='margin : 4px 5px 0px 0px') Reset
+						button.btn(style='margin-right : 47px') Submit
+

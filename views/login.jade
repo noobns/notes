@@ -1,0 +1,23 @@
+doctype
+html(lang = 'en')
+	head
+		title APP
+		link(rel='stylesheet', href='/stylesheets/bootstrap/css/bootstrap.min.css')
+
+
+	body
+		.container-login
+			.row(style= 'text-align : center; margin-top : 350px')
+				.col-md-4
+					form(action ='/login' method = 'post')
+						label(style= 'display : block; margin-right : 65px') Email Address
+						input(type = 'text' name = 'username')
+						label(style= 'display : block; margin-right : 97px; margin-top : 5px') Password
+						input(type = 'password' name = 'password')
+				.col-md-4
+				.col-md-4
+						button.btn(style='margin : 4px 5px 0px 0px') Reset
+						button.btn(style='margin-right : 47px') Submit
+			.row(style= 'text-align : center')
+				.col-md-12
+					a#register(href = '/register' style= 'margin : 4px 0px 0px 111px ') Register 
