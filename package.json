@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jade": "^1.11.0"
+    "bunyan": "^1.8.12",
+    "express": "^4.16.4",
+    "jade": "^1.11.0",
+    "path": "^0.12.7"
   }
 }
