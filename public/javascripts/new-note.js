@@ -1,23 +1,38 @@
+/*eslint no-console : off*/
 define (function (require) {
-	var $   = require ('jquery'); 
+	var $    = require ('jquery'); 
+
 
 	$(document).ready (function () { 
-		$('#save-note').click (function () {
-			$.ajax ({
-				url      : "/diary/ping",
-				type     : "GET",
-				success  : success,
-				error    : error,
-			});
-		});
+		$('#save-note').click (save_note);
 	});
 
-function success (data, status, xhr) {
-	console.log (data, "----------------");
-}
+	function save_note () {
+		var page = $('#diary-page').val ();
 
-function error (jqxhr, textStatus, errorMessage) {
-	console.log (errorMessage, "///////////////////");
-}
+		var data = {
+			"page" : page
+		};
 
+		console.log ({data : data}, 'diary entry data');
+
+		$.ajax ({
+			url      : "/diary/new-note",
+			type     : "POST",
+			headers  : {
+				"Content-type" : "application/json; charset=utf-8"
+			},
+			data     : JSON.stringify (data),
+			success  : success,
+			error    : error,
+		});
+	}
+
+	function success (data/*, status, xhr*/) {
+		console.log (data, 'data send ok');
+	}
+
+	function error (jqxhr, textStatus, errorMessage) {
+		console.log (jqxhr, textStatus, errorMessage, "data send error");
+	}
 });
