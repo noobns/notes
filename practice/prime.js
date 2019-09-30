@@ -1,12 +1,19 @@
 //find if a given number is prime or not.
 
 function prime (num){
-	if (num%num === 0 || num%1 === 0 ){
-		console.log("I am prime");
+	var count = 0;
+
+	for(var i = 1; i <= num; i++) {
+		if(num % i === 0) {
+			count++;
+		}	
 	}
-	else ("I am not prime");
 
-
+	if(count === 2){
+		console.log("number is prime");
+	}
+	else
+		console.log("number is not prime");
 }
 
-module.exports = prime;
+prime(8);
